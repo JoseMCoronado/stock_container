@@ -1,15 +1,24 @@
 # -*- coding: utf-8 -*-
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
-
 {
-    'name': 'Container Tracking on Transfers',
-    'version':'1.0',
-    'category': 'Inventory management',
-    'description': "Group your transfers into containers"
-This module adds the 'Container' on Transfers.
-=============================================
+    'name': 'Warehouse Management: Containers',
+    'version': '1.0',
+    'category': 'Warehouse',
+    'description': """
+This module adds the Container option in warehouse management
+================================================================
+    """,
+    'website': 'https://github.com/JoseMCoronado',
+    'depends': ['stock'],
+    'data': [
+        'views/stock_container_views.xml',
+        #'data/stock_container_data.xml',
+        'security/ir.model.access.csv',
 
-    'depends':['stock'],
-    #'data':['security/ir.model.access.csv','views/sale_margin_view.xml'],
-    'uninstall_hook': "uninstall_hook",
+        #'wizard/stock_picking_to_wave_views.xml',
+    ],
+    #'demo': [
+    #    'data/stock_picking_wave_demo.xml',
+    #],
+    'installable': True,
 }
